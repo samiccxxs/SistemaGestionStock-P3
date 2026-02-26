@@ -97,8 +97,11 @@ Al iniciar sesión te manda al módulo de productos
 ✅ Funcionalidades base completadas:
 
 Login/Registro (Cuenta)
+
 CRUD Productos
+
 CRUD Categorías
+
 Conexión a SQL Server
 
 
