@@ -95,6 +95,7 @@ Al iniciar sesión te manda al módulo de productos
 📝 Estado del proyecto
 
 ✅ Funcionalidades base completadas:
+
 Login/Registro (Cuenta)
 CRUD Productos
 CRUD Categorías
