@@ -20,8 +20,6 @@ public partial class SistemaStockContext : DbContext
     public virtual DbSet<Usuarios> Usuarios { get; set; }
     public virtual DbSet<Rol> Roles { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Data Source=DAR1KSON\\MSSQLSERVER2;Initial Catalog=SistemaStock;Integrated Security=True;Trust Server Certificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

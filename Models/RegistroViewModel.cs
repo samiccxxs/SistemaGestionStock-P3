@@ -4,20 +4,34 @@ namespace SistemaStock.Models
 {
     public class RegistroViewModel
     {
-        [Required]
+        /// Nombre de usuario
+
+        [Required(ErrorMessage = "El nombre de usuario es obligatorio")]
+        [Display(Name = "Nombre de Usuario")]
         public string? NombreUsuario { get; set; }
 
-        [Required]
+        /// Contraseña
+
+        [Required(ErrorMessage = "La contraseña es obligatoria")]
+        [Display(Name = "Contraseña")]
         [DataType(DataType.Password)]
         public string? Password { get; set; }
 
-        [Required]
+        /// Confirmar contraseña
+
+        [Required(ErrorMessage = "Debe confirmar la contraseña")]
+        [Display(Name = "Confirmar Contraseña")]
         [DataType(DataType.Password)]
-        [Compare("Password")]
+        [Compare("Password", ErrorMessage = "Las contraseñas no coinciden")]
         public string? ConfirmarPassword { get; set; }
 
-        [Required]
+        /// Nombre
+
+        [Required(ErrorMessage = "Debe ingresar un nombre")]
+        [Display(Name = "Nombre")]
         public string? Nombre { get; set; }
+
+        /// RolId por defecto (2 = Usuario)
 
         public int RolId { get; set; } = 2;
     }

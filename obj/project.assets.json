@@ -8208,35 +8208,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Darikson Sanchez\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Nevron Software\\Nevron Open Vision 2025.1\\Nuget\\Offline": {}
+    "C:\\Users\\Engel\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\ProgramasV\\SistemaStock\\SistemaStock\\SistemaStock.csproj",
+      "projectUniqueName": "C:\\Users\\Engel\\OneDrive\\Escritorio\\stockp3grupo\\SistemaGestionStock-P3\\SistemaStock.csproj",
       "projectName": "SistemaStock",
-      "projectPath": "C:\\ProgramasV\\SistemaStock\\SistemaStock\\SistemaStock.csproj",
-      "packagesPath": "C:\\Users\\Darikson Sanchez\\.nuget\\packages\\",
-      "outputPath": "C:\\ProgramasV\\SistemaStock\\SistemaStock\\obj\\",
+      "projectPath": "C:\\Users\\Engel\\OneDrive\\Escritorio\\stockp3grupo\\SistemaGestionStock-P3\\SistemaStock.csproj",
+      "packagesPath": "C:\\Users\\Engel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Engel\\OneDrive\\Escritorio\\stockp3grupo\\SistemaGestionStock-P3\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Nevron Software\\Nevron Open Vision 2025.1\\Nuget\\Offline"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Darikson Sanchez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Engel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\NevronOpenVision.25.8.26.12.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files (x86)\\Nevron Software\\Nevron Open Vision 2025.1\\Nuget\\Offline\\nevronopenvision": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -8295,7 +8291,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.311/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

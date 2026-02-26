@@ -17,69 +17,89 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SistemaStock
 build_property.RootNamespace = SistemaStock
-build_property.ProjectDir = C:\ProgramasV\SistemaStock\SistemaStock\
+build_property.ProjectDir = C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\ProgramasV\SistemaStock\SistemaStock
+build_property.MSBuildProjectDirectory = C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/ProgramasV/SistemaStock/SistemaStock/Views/Cuenta/Login.cshtml]
+[C:/Users/Engel/OneDrive/Escritorio/stockp3grupo/SistemaGestionStock-P3/Views/Categorias/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Engel/OneDrive/Escritorio/stockp3grupo/SistemaGestionStock-P3/Views/Categorias/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Engel/OneDrive/Escritorio/stockp3grupo/SistemaGestionStock-P3/Views/Categorias/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Engel/OneDrive/Escritorio/stockp3grupo/SistemaGestionStock-P3/Views/Categorias/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Engel/OneDrive/Escritorio/stockp3grupo/SistemaGestionStock-P3/Views/Categorias/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Engel/OneDrive/Escritorio/stockp3grupo/SistemaGestionStock-P3/Views/Cuenta/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/ProgramasV/SistemaStock/SistemaStock/Views/Cuenta/Registro.cshtml]
+[C:/Users/Engel/OneDrive/Escritorio/stockp3grupo/SistemaGestionStock-P3/Views/Cuenta/Registro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXFJlZ2lzdHJvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/ProgramasV/SistemaStock/SistemaStock/Views/Home/Index.cshtml]
+[C:/Users/Engel/OneDrive/Escritorio/stockp3grupo/SistemaGestionStock-P3/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/ProgramasV/SistemaStock/SistemaStock/Views/Home/Privacy.cshtml]
+[C:/Users/Engel/OneDrive/Escritorio/stockp3grupo/SistemaGestionStock-P3/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/ProgramasV/SistemaStock/SistemaStock/Views/Productoes/Create.cshtml]
+[C:/Users/Engel/OneDrive/Escritorio/stockp3grupo/SistemaGestionStock-P3/Views/Productoes/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9lc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/ProgramasV/SistemaStock/SistemaStock/Views/Productoes/Delete.cshtml]
+[C:/Users/Engel/OneDrive/Escritorio/stockp3grupo/SistemaGestionStock-P3/Views/Productoes/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9lc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/ProgramasV/SistemaStock/SistemaStock/Views/Productoes/Details.cshtml]
+[C:/Users/Engel/OneDrive/Escritorio/stockp3grupo/SistemaGestionStock-P3/Views/Productoes/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9lc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/ProgramasV/SistemaStock/SistemaStock/Views/Productoes/Edit.cshtml]
+[C:/Users/Engel/OneDrive/Escritorio/stockp3grupo/SistemaGestionStock-P3/Views/Productoes/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9lc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/ProgramasV/SistemaStock/SistemaStock/Views/Productoes/Index.cshtml]
+[C:/Users/Engel/OneDrive/Escritorio/stockp3grupo/SistemaGestionStock-P3/Views/Productoes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9lc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/ProgramasV/SistemaStock/SistemaStock/Views/Shared/Error.cshtml]
+[C:/Users/Engel/OneDrive/Escritorio/stockp3grupo/SistemaGestionStock-P3/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/ProgramasV/SistemaStock/SistemaStock/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Engel/OneDrive/Escritorio/stockp3grupo/SistemaGestionStock-P3/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/ProgramasV/SistemaStock/SistemaStock/Views/_ViewImports.cshtml]
+[C:/Users/Engel/OneDrive/Escritorio/stockp3grupo/SistemaGestionStock-P3/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/ProgramasV/SistemaStock/SistemaStock/Views/_ViewStart.cshtml]
+[C:/Users/Engel/OneDrive/Escritorio/stockp3grupo/SistemaGestionStock-P3/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/ProgramasV/SistemaStock/SistemaStock/Views/Shared/_Layout.cshtml]
+[C:/Users/Engel/OneDrive/Escritorio/stockp3grupo/SistemaGestionStock-P3/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-b6rgqlf4bc
