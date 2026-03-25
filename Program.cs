@@ -11,7 +11,7 @@ var conString = builder.Configuration.GetConnectionString("ConexionSQL") ??
      throw new InvalidOperationException("Connection string 'ConexionSQL'" +
     " not found.");
 builder.Services.AddDbContext<SistemaStockContext>(options =>
-    options.UseSqlServer(conString));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ConexionSQL")));
 
 builder.Services.AddSession(options =>
 {
@@ -41,7 +41,7 @@ app.MapStaticAssets();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Cuenta}/{action=Registro}/{id?}")
+    pattern: "{controller=Cuenta}/{action=Login}/{id?}")
     .WithStaticAssets();
 
 

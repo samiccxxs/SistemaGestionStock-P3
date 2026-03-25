@@ -1,5 +1,4 @@
 wwwroot\css\site.css
-wwwroot\favicon.ico
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -61,6 +60,11 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\js\categorias.js
+wwwroot\js\productos.js
+wwwroot\js\usuarios.js
+wwwroot\js\movimientos.js
+wwwroot\favicon.ico
 C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\wwwroot\lib\jquery\LICENSE.txt
 C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\wwwroot\lib\jquery\dist\jquery.slim.min.map
 C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\wwwroot\lib\jquery\dist\jquery.slim.min.js
@@ -123,3 +127,7 @@ C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\wwwroot\l
 C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\wwwroot\js\site.js
 C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\wwwroot\favicon.ico
 C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\wwwroot\css\site.css
+C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\wwwroot\js\categorias.js
+C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\wwwroot\js\productos.js
+C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\wwwroot\js\usuarios.js
+C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\wwwroot\js\movimientos.js

@@ -1,0 +1,151 @@
+﻿@model IEnumerable<SistemaStock.Models.Movimiento>
+@{
+    ViewData["Title"] = "Movimientos de Stock";
+}
+
+<div class="container-fluid px-4 py-3">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold mb-0">Movimientos de Stock</h2>
+        <div class="d-flex gap-2">
+            <button class="btn btn-success" onclick="abrirModalEntrada()">
+                <i class="bi bi-box-arrow-in-down"></i> Entrada
+            </button>
+            <button class="btn btn-danger" onclick="abrirModalSalida()">
+                <i class="bi bi-box-arrow-up"></i> Salida
+            </button>
+        </div>
+    </div>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+
+    <div class="card border-0 shadow-sm">
+        <div class="card-body p-0">
+            <table class="table table-hover mb-0" id="tablaMovimientos">
+                <thead class="table-light">
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Producto</th>
+                        <th class="text-center">Tipo</th>
+                        <th class="text-center">Cantidad</th>
+                        <th class="text-center">Stock Anterior</th>
+                        <th class="text-center">Stock Nuevo</th>
+                        <th>Observación</th>
+                        <th>Usuario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var m in Model)
+                    {
+                        <tr>
+                            <td>@m.Fecha.ToString("dd/MM/yyyy HH:mm")</td>
+                            <td>@m.Producto?.Nombre</td>
+                            <td class="text-center">
+                                <span class="badge @(m.Tipo == "Entrada" ? "bg-success" : "bg-danger")">
+                                    @m.Tipo
+                                </span>
+                            </td>
+                            <td class="text-center fw-bold">@m.Cantidad</td>
+                            <td class="text-center">@m.StockAnterior</td>
+                            <td class="text-center">@m.StockNuevo</td>
+                            <td>@m.Observacion</td>
+                            <td>@m.Usuario?.Nombre</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Entrada -->
+<div class="modal fade" id="modalEntrada" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="Entrada" method="post">
+                @Html.AntiForgeryToken()
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">
+                        <i class="bi bi-box-arrow-in-down"></i> Registrar Entrada
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Producto</label>
+                        <select name="ProductoId" class="form-select" required>
+                            <option value="">-- Selecciona un producto --</option>
+                            @foreach (var p in ViewBag.Productos)
+                            {
+                                <option value="@p.ProductoId">@p.Nombre (Stock actual: @p.Stock)</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Cantidad a ingresar</label>
+                        <input name="Cantidad" type="number" min="1" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Observación <small class="text-muted">(opcional)</small></label>
+                        <textarea name="Observacion" class="form-control" rows="2"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-success">Registrar Entrada</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Salida -->
+<div class="modal fade" id="modalSalida" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form asp-action="Salida" method="post">
+                @Html.AntiForgeryToken()
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title">
+                        <i class="bi bi-box-arrow-up"></i> Registrar Salida
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Producto</label>
+                        <select name="ProductoId" class="form-select" required>
+                            <option value="">-- Selecciona un producto --</option>
+                            @foreach (var p in ViewBag.Productos)
+                            {
+                                <option value="@p.ProductoId">@p.Nombre (Stock actual: @p.Stock)</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Cantidad a retirar</label>
+                        <input name="Cantidad" type="number" min="1" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Observación <small class="text-muted">(opcional)</small></label>
+                        <textarea name="Observacion" class="form-control" rows="2"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-danger">Registrar Salida</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/movimientos.js"></script>
+}

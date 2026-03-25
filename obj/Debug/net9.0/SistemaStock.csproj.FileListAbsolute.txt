@@ -616,7 +616,6 @@ C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\obj\Debug
 C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\obj\Debug\net9.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\obj\Debug\net9.0\scopedcss\bundle\SistemaStock.styles.css
 C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\obj\Debug\net9.0\scopedcss\projectbundle\SistemaStock.bundle.scp.css
-C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\obj\Debug\net9.0\compressed\a2gh0p2dmh-61n19gt1b8.gz
 C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\obj\Debug\net9.0\compressed\frqxxo9z8w-xtxxf3hu2r.gz
 C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\obj\Debug\net9.0\compressed\hrtw6c6jr7-t1cqhe9u97.gz
 C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\obj\Debug\net9.0\compressed\ufovhbalhq-c2jlpeoesf.gz
@@ -691,3 +690,9 @@ C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\obj\Debug
 C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\obj\Debug\net9.0\SistemaStock.genruntimeconfig.cache
 C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\obj\Debug\net9.0\ref\SistemaStock.dll
 C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\obj\Debug\net9.0\compressed\yv54mbxvj0-la6rjdvbbt.gz
+C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\bin\Debug\net9.0\BCrypt.Net-Next.dll
+C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\obj\Debug\net9.0\compressed\3lxy98843l-1d3gcsnbx0.gz
+C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\obj\Debug\net9.0\compressed\k4tilryjte-mzkgwp7eqq.gz
+C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\obj\Debug\net9.0\compressed\0rc07rdsw4-pc1rxug3y8.gz
+C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\obj\Debug\net9.0\compressed\rnkmihrd5l-xiblbnm187.gz
+C:\Users\Engel\OneDrive\Escritorio\stockp3grupo\SistemaGestionStock-P3\obj\Debug\net9.0\compressed\a2gh0p2dmh-k4r0l30pf1.gz

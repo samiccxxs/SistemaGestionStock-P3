@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using SistemaStock.Filters;
 using SistemaStock.Models;
 
 namespace SistemaStock.Controllers
 {
+    [SessionAuthFilter]
     public class ProductoesController : Controller
     {
         private readonly SistemaStockContext _context;
@@ -18,142 +17,132 @@ namespace SistemaStock.Controllers
             _context = context;
         }
 
-        // GET: Productoes
         public async Task<IActionResult> Index()
         {
-            var sistemaStockContext = _context.Productos.Include(p => p.Categoria);
-            return View(await sistemaStockContext.ToListAsync());
-        }
-
-        // GET: Productoes/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var producto = await _context.Productos
+            ViewBag.Categorias = await _context.Categorias.ToListAsync();
+            var productos = await _context.Productos
                 .Include(p => p.Categoria)
-                .FirstOrDefaultAsync(m => m.ProductoId == id);
-            if (producto == null)
-            {
-                return NotFound();
-            }
-
-            return View(producto);
+                .ToListAsync();
+            return View(productos);
         }
 
-        // GET: Productoes/Create
-        public IActionResult Create()
-        {
-            ViewBag.CategoriaId = new SelectList(_context.Categorias, "CategoriaId", "Nombre");
-            return View();
-        }
-
-        // POST: Productoes/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [SessionAuthFilter(1)]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductoId,Codigo,Nombre,Descripcion,CategoriaId,Precio,Stock,StockMinimo")] Producto producto)
+        public async Task<IActionResult> Create([Bind("Codigo,Nombre,Descripcion,CategoriaId,Precio,Stock,StockMinimo,Activo")] Producto producto)
         {
             ModelState.Remove("Categoria");
+
             if (ModelState.IsValid)
             {
+                var codigoExiste = await _context.Productos
+                    .AnyAsync(p => p.Codigo == producto.Codigo);
+
+                if (codigoExiste)
+                {
+                    TempData["Error"] = "Ya existe un producto con ese código.";
+                    return RedirectToAction(nameof(Index));
+                }
+
                 _context.Add(producto);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                TempData["Success"] = "Producto creado correctamente.";
             }
-            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "CategoriaId", "CategoriaId", producto.CategoriaId);
-            return View(producto);
+            else
+            {
+                TempData["Error"] = string.Join(", ", ModelState.Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage));
+            }
+
+            return RedirectToAction(nameof(Index));
         }
 
-
-        // GET: Productoes/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var producto = await _context.Productos.FindAsync(id);
-            if (producto == null)
-            {
-                return NotFound();
-            }
-            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "CategoriaId", "Nombre", producto.CategoriaId);
-            return View(producto);
-        }
-
-        // POST: Productoes/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [SessionAuthFilter(1)]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductoId,Codigo,Nombre,Descripcion,CategoriaId,Precio,Stock,StockMinimo")] Producto producto)
+        public async Task<IActionResult> Edit([Bind("ProductoId,Codigo,Nombre,Descripcion,CategoriaId,Precio,Stock,StockMinimo,Activo")] Producto producto)
         {
-            if (id != producto.ProductoId)
-            {
-                return NotFound();
-            }
+            ModelState.Remove("Categoria");
 
             if (ModelState.IsValid)
             {
                 try
                 {
+                    var original = await _context.Productos
+                        .AsNoTracking()
+                        .FirstOrDefaultAsync(p => p.ProductoId == producto.ProductoId);
+
+                    if (original == null)
+                    {
+                        TempData["Error"] = "El producto no existe.";
+                        return RedirectToAction(nameof(Index));
+                    }
+
+                    // Verificar código duplicado en otro producto
+                    var codigoExiste = await _context.Productos
+                        .AnyAsync(p => p.Codigo == producto.Codigo && p.ProductoId != producto.ProductoId);
+
+                    if (codigoExiste)
+                    {
+                        TempData["Error"] = "Ya existe otro producto con ese código.";
+                        return RedirectToAction(nameof(Index));
+                    }
+
+                    producto.FechaCreacion = original.FechaCreacion;
+
                     _context.Update(producto);
                     await _context.SaveChangesAsync();
+                    TempData["Success"] = "Producto actualizado correctamente.";
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProductoExists(producto.ProductoId))
-                    {
-                        return NotFound();
-                    }
+                    if (!_context.Productos.Any(p => p.ProductoId == producto.ProductoId))
+                        TempData["Error"] = "El producto no existe.";
                     else
-                    {
                         throw;
-                    }
                 }
-                return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoriaId"] = new SelectList(_context.Categorias, "CategoriaId", "CategoriaId", producto.CategoriaId);
-            return View(producto);
+            else
+            {
+                TempData["Error"] = string.Join(", ", ModelState.Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage));
+            }
+
+            return RedirectToAction(nameof(Index));
         }
 
-        // GET: Productoes/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var producto = await _context.Productos
-                .Include(p => p.Categoria)
-                .FirstOrDefaultAsync(m => m.ProductoId == id);
-            if (producto == null)
-            {
-                return NotFound();
-            }
-
-            return View(producto);
-        }
-
-        // POST: Productoes/Delete/5
+        [SessionAuthFilter(1)]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var producto = await _context.Productos.FindAsync(id);
-            if (producto != null)
+
+            if (producto == null)
             {
-                _context.Productos.Remove(producto);
+                TempData["Error"] = "Producto no encontrado.";
+                return RedirectToAction(nameof(Index));
             }
 
+            var tieneMovimientos = await _context.Movimientos
+                .AnyAsync(m => m.ProductoId == id);
+
+            if (tieneMovimientos)
+            {
+                // En vez de eliminar, desactivar
+                producto.Activo = false;
+                _context.Update(producto);
+                await _context.SaveChangesAsync();
+                TempData["Error"] = "El producto tiene movimientos registrados y no puede eliminarse. Fue desactivado en su lugar.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            _context.Productos.Remove(producto);
             await _context.SaveChangesAsync();
+            TempData["Success"] = "Producto eliminado correctamente.";
+
             return RedirectToAction(nameof(Index));
         }
 
